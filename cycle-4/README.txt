@@ -14,6 +14,10 @@ Implementation description:
 		pop|pop|ret at some location in the binary
 	Find existing characters in the binary to construct an argument to system call
 		used "sh; "
+	Build payload that uses strcpy ROP gadgets to write "sh; " to bss
+	Overflow buffer
+	Insert payload
+	Achieve arbitrary execution
 		
 Implementation files:
 	vuln.c -- vulnerable C program
