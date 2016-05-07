@@ -1,1 +1,1 @@
-# csc-791
+# CSC 791: Software Exploitation
