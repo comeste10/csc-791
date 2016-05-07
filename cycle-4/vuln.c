@@ -1,8 +1,8 @@
-# Steven Comer
-# CSC 791: Special Topics in Software Exploitation
-# Cycle 4: Protection Bypass of ASLR and NX
-# Contents: Simple C program vulnerable to buffer overflow
-# Modified: 24 April 2016
+// Steven Comer
+// CSC 791: Special Topics in Software Exploitation
+// Cycle 4: Protection Bypass of ASLR and NX
+// Contents: Simple C program vulnerable to buffer overflow
+// Modified: 24 April 2016
 
 #include <stdio.h>
 #include <string.h>
